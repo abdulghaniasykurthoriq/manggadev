@@ -5,160 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manggadev - Solusi Digital & Tugas</title>
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
 
   <body class="bg-gray-50 text-gray-800">
-
-    <!-- Navbar -->
-    <header class="bg-white shadow-md">
-      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
         <h1 class="text-2xl font-bold text-green-600">Manggadev</h1>
-        <nav class="space-x-4">
+        <button class="md:hidden block focus:outline-none" id="menu-btn">
+          <svg
+            class="w-6 h-6 text-green-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <nav id="nav-menu" class="hidden md:flex space-x-6">
           <a href="#layanan" class="hover:text-green-600">Layanan</a>
           <a href="#portofolio" class="hover:text-green-600">Portofolio</a>
           <a href="#kontak" class="hover:text-green-600">Kontak</a>
         </nav>
       </div>
+      <div id="mobile-nav" class="md:hidden hidden px-6 pb-4">
+        <a href="#layanan" class="block py-2 hover:text-green-600">Layanan</a>
+        <a href="#portofolio" class="block py-2 hover:text-green-600"
+          >Portofolio</a
+        >
+        <a href="#kontak" class="block py-2 hover:text-green-600">Kontak</a>
+      </div>
     </header>
 
-    <!-- Hero -->
-    <section class="bg-green-100 py-20">
-      <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between">
-        <div class="text-center md:text-left md:w-1/2" data-aos="fade-right">
-          <h2 class="text-4xl font-bold text-green-700 mb-4">Solusi Digital & Tugas Tanpa Ribet</h2>
-          <p class="text-lg text-gray-700 mb-6">
-            Bantu UMKM naik kelas & mahasiswa beresin tugas tepat waktu.
-          </p>
-          <a href="#kontak" class="bg-green-600 text-white px-6 py-3 rounded shadow hover:bg-green-700">Konsultasi Sekarang</a>
+    <!-- Main Content -->
+    <main class="pt-24">
+      <!-- Hero -->
+      <section class="bg-green-100 py-20">
+        <div
+          class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between"
+        >
+          <div class="text-center md:text-left md:w-1/2" data-aos="fade-right">
+            <h2 class="text-4xl font-bold text-green-700 mb-4">
+              Solusi Digital & Tugas Tanpa Ribet
+            </h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Bantu UMKM naik kelas & mahasiswa beresin tugas tepat waktu.
+            </p>
+            <a
+              href="#kontak"
+              class="bg-green-600 text-white px-6 py-3 rounded shadow hover:bg-green-700"
+            >
+              Konsultasi Sekarang
+            </a>
+          </div>
+          <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-left">
+            <img src="teamwork.svg" alt="Hero Illustration" class="w-full" />
+          </div>
         </div>
-        <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-left">
-          <img src="teamwork.svg" alt="Hero Illustration" class="w-full" />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Layanan -->
-    <section id="layanan" class="py-16 bg-white">
-      <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Layanan Kami</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4" data-aos="fade-up" data-aos-delay="100">
-            <img src="developeractivity.svg" alt="Web Dev" class="w-16 h-16" />
-            <div>
-              <h4 class="text-xl font-semibold mb-2">💻 Website & Digitalisasi UMKM</h4>
-              <p>Pembuatan website bisnis, katalog online, sistem kasir sederhana.</p>
-            </div>
+      <!-- Layanan -->
+      <section id="layanan" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h3
+            class="text-3xl font-semibold text-center mb-10"
+            data-aos="fade-up"
+          >
+            Layanan Kami
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Card-card layanan -->
+            <article
+              class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="developeractivity.svg"
+                alt="Web Dev"
+                class="w-16 h-16"
+              />
+              <div>
+                <h4 class="text-xl font-semibold mb-2">
+                  💻 Website & Digitalisasi UMKM
+                </h4>
+                <p>
+                  Pembuatan website bisnis, katalog online, sistem kasir
+                  sederhana.
+                </p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img src="graduation.svg" alt="Student" class="w-16 h-16" />
+              <div>
+                <h4 class="text-xl font-semibold mb-2">
+                  🎓 Skripsi & Tugas Kuliah
+                </h4>
+                <p>Bimbingan penulisan, joki skripsi, coding tugas harian.</p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <img src="mobile.svg" alt="App" class="w-16 h-16" />
+              <div>
+                <h4 class="text-xl font-semibold mb-2">
+                  📱 Aplikasi & Sistem Informasi
+                </h4>
+                <p>
+                  Booking system, aplikasi kasir, sistem informasi sekolah &
+                  toko.
+                </p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <img src="maintanance.svg" alt="Maintenance" class="w-16 h-16" />
+              <div>
+                <h4 class="text-xl font-semibold mb-2">
+                  🔧 Maintenance & Konsultasi
+                </h4>
+                <p>
+                  Perbaikan sistem lama, optimasi performa, konsultasi digital
+                  UMKM.
+                </p>
+              </div>
+            </article>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4" data-aos="fade-up" data-aos-delay="200">
-            <img src="graduation.svg" alt="Student" class="w-16 h-16" />
-            <div>
-              <h4 class="text-xl font-semibold mb-2">🎓 Skripsi & Tugas Kuliah</h4>
-              <p>Bimbingan penulisan, joki skripsi, coding tugas harian.</p>
-            </div>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4" data-aos="fade-up" data-aos-delay="300">
-            <img src="mobile.svg" alt="App" class="w-16 h-16" />
-            <div>
-              <h4 class="text-xl font-semibold mb-2">📱 Aplikasi & Sistem Informasi</h4>
-              <p>Booking system, aplikasi kasir, sistem informasi sekolah & toko.</p>
-            </div>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg shadow flex items-start space-x-4" data-aos="fade-up" data-aos-delay="400">
-            <img src="maintanance.svg" alt="Maintenance" class="w-16 h-16" />
-            <div>
-              <h4 class="text-xl font-semibold mb-2">🔧 Maintenance & Konsultasi</h4>
-              <p>Perbaikan sistem lama, optimasi performa, konsultasi digital UMKM.</p>
+        </div>
+      </section>
+
+      <!-- Portofolio -->
+      <section id="portofolio" class="py-16 bg-green-50">
+        <div class="container mx-auto px-6">
+          <h3
+            class="text-3xl font-semibold text-center mb-10"
+            data-aos="fade-up"
+          >
+            Portofolio
+          </h3>
+          <div class="swiper mySwiper" data-aos="zoom-in">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide bg-white shadow p-4 rounded-lg">
+                <img
+                  src="umkm.png"
+                  alt="Website"
+                  class="w-full rounded mb-2 object-cover aspect-[16/9]"
+                />
+                <p>✔ Website Toko Sembako Digital</p>
+              </div>
+              <div class="swiper-slide bg-white shadow p-4 rounded-lg">
+                <img
+                  src="sembako.png"
+                  alt="Studio"
+                  class="w-full rounded mb-2 object-cover aspect-[16/9]"
+                />
+                <p>✔ Sistem Booking Studio Musik</p>
+              </div>
+              <div class="swiper-slide bg-white shadow p-4 rounded-lg">
+                <img
+                  src="laundry.png"
+                  alt="POS"
+                  class="w-full rounded mb-2 object-cover aspect-[16/9]"
+                />
+                <p>✔ Aplikasi Kasir Laundry</p>
+              </div>
+              <div class="swiper-slide bg-white shadow p-4 rounded-lg">
+                <img
+                  src="skripsi.png"
+                  alt="Skripsi"
+                  class="w-full rounded mb-2 object-cover aspect-[16/9]"
+                />
+                <p>✔ Skripsi Sistem Informasi Inventaris</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Portofolio with Swiper -->
-    <section id="portofolio" class="py-16 bg-green-50">
-      <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Portofolio</h3>
-        <div class="swiper mySwiper" data-aos="zoom-in">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide bg-white shadow p-4 rounded-lg">
-              <img src="umkm.png" alt="Website" class="w-full rounded mb-2 object-cover aspect-[16/9]" />
-              <p>✔ Website Toko Sembako Digital</p>
-            </div>
-            <div class="swiper-slide bg-white shadow p-4 rounded-lg">
-              <img src="sembako.png" alt="Studio" class="w-full rounded mb-2 object-cover aspect-[16/9]" />
-              <p>✔ Sistem Booking Studio Musik</p>
-            </div>
-            <div class="swiper-slide bg-white shadow p-4 rounded-lg">
-              <img src="laundry.png" alt="POS" class="w-full rounded mb-2 object-cover aspect-[16/9]" />
-              <p>✔ Aplikasi Kasir Laundry</p>
-            </div>
-            <div class="swiper-slide bg-white shadow p-4 rounded-lg">
-              <img src="skripsi.png" alt="Skripsi" class="w-full rounded mb-2 object-cover aspect-[16/9]" />
-              <p>✔ Skripsi Sistem Informasi Inventaris</p>
-            </div>
+      <!-- Alur Kerja -->
+      <section id="alurkerja" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h3
+            class="text-3xl font-semibold text-center mb-10"
+            data-aos="fade-up"
+          >
+            Alur Kerja Kami
+          </h3>
+          <div class="space-y-8 max-w-3xl mx-auto">
+            <!-- Step -->
+            <article
+              class="bg-white rounded-lg shadow p-6 flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="text-white bg-green-600 w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold"
+              >
+                1
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg text-green-600">
+                  Konsultasi Awal
+                </h4>
+                <p>Diskusi kebutuhan dan topik awal.</p>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow p-6 flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="text-white bg-green-600 w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold"
+              >
+                2
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg text-green-600">
+                  Briefing Konsep & Judul Penelitian
+                </h4>
+                <p>Penentuan arah penelitian & validasi topik.</p>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow p-6 flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="text-white bg-green-600 w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold"
+              >
+                3
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg text-green-600">
+                  Penawaran & Kontrak Kerja
+                </h4>
+                <p>Kesepakatan biaya dan layanan.</p>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow p-6 flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="text-white bg-green-600 w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold"
+              >
+                4
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg text-green-600">
+                  Persiapan & Diskusi Bahan Naskah
+                </h4>
+                <p>Pengumpulan referensi dan template naskah.</p>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow p-6 flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div
+                class="text-white bg-green-600 w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold"
+              >
+                5
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg text-green-600">
+                  Bimbingan Dosen
+                </h4>
+                <p>Pendampingan selama proses bimbingan dosen.</p>
+              </div>
+            </article>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination mt-6"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Kontak -->
-    <section id="kontak" class="py-16 bg-white">
-      <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-        <h3 class="text-3xl font-semibold mb-6">Hubungi Kami</h3>
-        <p class="mb-4">Konsultasi cepat via WhatsApp</p>
-        <a href="https://wa.me/6285943578268" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">Chat WhatsApp</a>
-        <p class="mt-4 text-sm text-gray-500">Email: admin@manggadev.id</p>
-      </div>
-    </section>
+      <!-- Kontak -->
+      <section id="kontak" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+          <h3 class="text-3xl font-semibold mb-6">Hubungi Kami</h3>
+          <p class="mb-4">Konsultasi cepat via WhatsApp</p>
+          <a
+            href="https://wa.me/6285943578268"
+            target="_blank"
+            class="inline-block bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700"
+            >Chat WhatsApp</a
+          >
+          <p class="mt-4 text-sm text-gray-500">Email: admin@manggadev.id</p>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-green-600 text-white py-6">
       <div class="container mx-auto px-6 text-center">
         <p>© 2025 Manggadev. Semua hak dilindungi.</p>
-        <p class="text-sm mt-1 italic">"Bikin tugas & bisnismu makin berbuah 🍃"</p>
+        <p class="text-sm mt-1 italic">
+          "Bikin tugas & bisnismu makin berbuah 🍃"
+        </p>
       </div>
     </footer>
 
-    <!-- JS: Swiper & AOS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      // Swiper init
       const swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
         breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
         },
       });
 
-      // AOS init
-      AOS.init({
-        once: true,
-        duration: 800,
-        easing: 'ease-in-out',
+      AOS.init({ once: true, duration: 800, easing: "ease-in-out" });
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
       });
     </script>
   </body>
